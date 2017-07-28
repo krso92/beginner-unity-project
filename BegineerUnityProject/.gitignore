@@ -35,3 +35,4 @@ sysinfo.txt
 
 # ignore imported modules
 /Assets/Modules
+/Assets/Modules.meta
