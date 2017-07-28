@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 6cbc3845d5c4a7b43877d327516347f9
+timeCreated: 1494527759
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PuddleDvaSpriteSheet_0
+    21300002: PuddleDvaSpriteSheet_1
+    21300004: PuddleDvaSpriteSheet_2
+    21300006: PuddleDvaSpriteSheet_3
+    21300008: PuddleDvaSpriteSheet_4
+    21300010: PuddleDvaSpriteSheet_5
+    21300012: PuddleDvaSpriteSheet_6
+    21300014: PuddleDvaSpriteSheet_7
+    21300016: PuddleDvaSpriteSheet_8
+    21300018: PuddleDvaSpriteSheet_9
+    21300020: PuddleDvaSpriteSheet_10
+    21300022: PuddleDvaSpriteSheet_11
+    21300024: PuddleDvaSpriteSheet_12
+    21300026: PuddleDvaSpriteSheet_13
+    21300028: PuddleDvaSpriteSheet_14
+    21300030: PuddleDvaSpriteSheet_15
+    21300032: PuddleDvaSpriteSheet_16
+    21300034: PuddleDvaSpriteSheet_17
+    21300036: PuddleDvaSpriteSheet_37
+    21300038: PuddleDvaSpriteSheet_19
+    21300040: PuddleDvaSpriteSheet_20
+    21300042: PuddleDvaSpriteSheet_21
+    21300044: PuddleDvaSpriteSheet_22
+    21300046: PuddleDvaSpriteSheet_23
+    21300048: PuddleDvaSpriteSheet_24
+    21300050: PuddleDvaSpriteSheet_25
+    21300052: PuddleDvaSpriteSheet_26
+    21300054: PuddleDvaSpriteSheet_27
+    21300056: PuddleDvaSpriteSheet_28
+    21300058: PuddleDvaSpriteSheet_29
+    21300060: PuddleDvaSpriteSheet_30
+    21300062: PuddleDvaSpriteSheet_31
+    21300064: PuddleDvaSpriteSheet_32
+    21300066: PuddleDvaSpriteSheet_33
+    21300068: PuddleDvaSpriteSheet_34
+    21300070: PuddleDvaSpriteSheet_35
+    21300072: PuddleDvaSpriteSheet_36
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 7881
+        width: 151
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 7485
+        width: 196
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 7118
+        width: 197
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 6747
+        width: 197
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 6379
+        width: 197
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 5988
+        width: 269
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 5620
+        width: 269
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 5252
+        width: 269
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 4884
+        width: 269
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 4516
+        width: 269
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 4149
+        width: 269
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 3746
+        width: 360
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 3378
+        width: 360
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 3010
+        width: 360
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2639
+        width: 360
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2230
+        width: 486
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1860
+        width: 486
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 684
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1101
+        width: 684
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 733
+        width: 684
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 366
+        width: 684
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 684
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1467
+        width: 684
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuddleDvaSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 7402
+        width: 159
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
