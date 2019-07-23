@@ -3,12 +3,10 @@ using System.Collections;
 
 //using UnityEditor.Events;
 
-/* Definisano je u originalnoj skripti
 public enum Weapon{
 	UNARMED = 0,
 	RELAX = 8
 }
-*/
 
 public class RPGCharacterControllerFREE_Modif : MonoBehaviour{
 	#region Variables
