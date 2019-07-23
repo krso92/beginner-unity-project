@@ -6,10 +6,10 @@ Download or clone project, then
 
 ### Import following assets in project:
 
-RPG Character Animation
-https://www.assetstore.unity3d.com/en/#!/content/65284
-
 Dungeon Skeletons Demo
 https://www.assetstore.unity3d.com/en/#!/content/71087
+
+Skyboxes
+https://assetstore.unity.com/packages/2d/textures-materials/sky/spaceskies-2-135333
 
 Done.
