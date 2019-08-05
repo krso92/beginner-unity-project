@@ -12,4 +12,7 @@ https://www.assetstore.unity3d.com/en/#!/content/71087
 Skyboxes
 https://assetstore.unity.com/packages/2d/textures-materials/sky/spaceskies-free-80503
 
+Standard assets
+https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351
+
 Done.
