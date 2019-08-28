@@ -11,6 +11,9 @@ public class SimpleMonster : MonoBehaviour, Enemy
     private float attackWait;
 
     [SerializeField]
+    private float attackDistanceStop;
+    
+    [SerializeField]
     private float attentionWait;
 
     [SerializeField]
@@ -24,6 +27,9 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     [SerializeField]
     private UnityStandardAssets._2D.PlatformerCharacter2D character2D;
+
+    [SerializeField]
+    private Character2dAnimationHandler animationHandler;
 
     private Vector2 NextPatrolPoint
     {
@@ -43,7 +49,8 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     public void Attack()
     {
-        throw new System.NotImplementedException();
+        animationHandler.Attack();
+        // TODO -- eventualno nesto
     }
 
     public void Inspect()
@@ -53,7 +60,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     public void Move(float move)
     {
-        direction = move;
+        direction = Mathf.Clamp(move * 10, -1, 1);
         character2D.Move(move, false, false);
     }
 
@@ -79,7 +86,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
         do
         {
             var goTo = NextPatrolPoint;
-            yield return StartCoroutine(ArrivedOnSpot(goTo));
+            yield return StartCoroutine(PatrolToSpot(goTo));
             if (state != EnemyState.Patroling)
             {
                 break;
@@ -91,9 +98,26 @@ public class SimpleMonster : MonoBehaviour, Enemy
         yield return null;
     }
 
-    private IEnumerator ArrivedOnSpot(Vector2 spot)
+    private IEnumerator Attacking(Transform target)
     {
-        while(Mathf.Abs(spot.x - transform.position.x) > 0.5f && state == EnemyState.Patroling)
+        Debug.Log("Entering attacking state...");
+        while(state == EnemyState.Attacking)
+        {
+            var dist = target.position.x - transform.position.x;
+            var move = Mathf.Clamp(Mathf.Abs(dist) > attackDistanceStop ? dist : 0f, -1, 1);
+            Move(move);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
+    private bool IsNear(Vector2 spot, float delta = 1f)
+    {
+        return Mathf.Abs(spot.x - transform.position.x) > delta;
+    }
+
+    private IEnumerator PatrolToSpot(Vector2 spot)
+    {
+        while(IsNear(spot) && state == EnemyState.Patroling)
         {
             var move = Mathf.Clamp(spot.x - transform.position.x, -1, 1);
             Move(move);
@@ -109,19 +133,33 @@ public class SimpleMonster : MonoBehaviour, Enemy
         while(enabled)
         {
             yield return new WaitForSeconds(attentionWait);
-            // FIXME -- not working now...something wrong here
-            RaycastHit2D hit = Physics2D.Raycast(
-                transform.position + Vector3.up,
-                Vector2.right * direction,
-                attentionDistance,
-                LayerMask.NameToLayer("Friend")
-            );
-            Debug.DrawRay(transform.position + Vector3.up, Vector2.right * direction, Color.blue, 5f);
-            Debug.Log(hit.collider);            
-            if (hit.collider)
+
+            switch(state)
             {
-                state = EnemyState.Attacking;
-                // TODO ...
+                case EnemyState.Attacking:
+                    Attack();
+                    break;
+                case EnemyState.Patroling:
+                    RaycastHit2D hit = Physics2D.Raycast(
+                        transform.position + Vector3.up,
+                        Vector2.right * direction,
+                        attentionDistance,
+                        1 << LayerMask.NameToLayer("Friend")
+                    );
+                    Debug.DrawRay(
+                        transform.position + Vector3.up,
+                        Vector2.right * direction * attentionDistance,
+                        Color.red,
+                        1f
+                    );
+                    if (hit.collider)
+                    {
+                        state = EnemyState.Attacking;
+                        StartCoroutine(Attacking(hit.transform));
+                    }
+                    break;
+                default:
+                    throw new System.NotImplementedException();
             }
         }
     }
