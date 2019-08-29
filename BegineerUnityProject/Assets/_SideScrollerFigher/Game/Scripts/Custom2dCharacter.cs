@@ -21,6 +21,8 @@ public class Custom2dCharacter : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var dmg = other.gameObject.GetComponent<DamageSystem>();
+        Debug.Log("allalallalalalla");
+        Debug.Log(other.gameObject.name);
         if (dmg != null) // == means equal, != means not equal
         {
             health = Mathf.Max(0, health - dmg.DamageAmount);
