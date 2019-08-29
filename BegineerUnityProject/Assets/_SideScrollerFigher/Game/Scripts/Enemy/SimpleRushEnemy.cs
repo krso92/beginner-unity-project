@@ -62,4 +62,9 @@ public class SimpleRushEnemy : MonoBehaviour, Enemy
     {
         Debug.Log("Die robot!");
     }
+
+    public void Move(float move)
+    {
+        throw new System.NotImplementedException();
+    }
 }
