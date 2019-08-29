@@ -60,7 +60,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     public void Move(float move)
     {
-        direction = Mathf.Clamp(move * 10, -1, 1);
+        direction = Mathf.Clamp(move * 1000, -1, 1);
         character2D.Move(move, false, false);
     }
 
@@ -125,7 +125,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
         }
         yield return null;
         Debug.Log("Arived on spot..stopping");
-        Move(0);
+        Move(0.005f * direction);
     }
 
     private IEnumerator Attention()
