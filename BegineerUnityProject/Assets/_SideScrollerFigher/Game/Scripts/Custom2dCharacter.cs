@@ -13,6 +13,16 @@ public class Custom2dCharacter : MonoBehaviour
 
     private int health;
 
+    public int CurrentHealth
+    {
+        get => health;
+    }
+
+    private void Awake()
+    {
+        FindObjectOfType<PlayerUI>().Player = this;
+    }
+
     private void Start()
     {
         health = maxHealth;
