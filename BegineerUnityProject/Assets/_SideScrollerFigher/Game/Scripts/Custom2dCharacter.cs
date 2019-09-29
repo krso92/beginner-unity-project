@@ -34,6 +34,7 @@ public class Custom2dCharacter : MonoBehaviour
         if (dmg != null) // == means equal, != means not equal
         {
             health = Mathf.Max(0, health - dmg.DamageAmount);
+            animator.SetTrigger("Hurt");
         }
         if (health == 0)
         {
@@ -43,17 +44,21 @@ public class Custom2dCharacter : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("Dead");
+        animator.SetTrigger("Die");
         controls.enabled = false;
     }
 
     private void Update()
     {
+        if (Input.GetButtonDown("WizAttack"))
+        {
+            animator.SetTrigger("Attack");
+        }
         // A little cheat ;)
         if (Input.GetKeyDown(KeyCode.R))
         {
             animator.SetTrigger("Revive");
             controls.enabled = true;
-        }    
+        }
     }
 }
