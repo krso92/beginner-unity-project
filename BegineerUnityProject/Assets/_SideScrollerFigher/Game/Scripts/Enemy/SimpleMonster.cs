@@ -47,6 +47,20 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     public EnemyState State => state;
 
+    // Health part
+
+
+    [SerializeField]
+    private int maxHealth;
+
+    private int health;
+
+    public int CurrentHealth
+    {
+        get => health;
+    }
+
+
     public void Attack()
     {
         animationHandler.Attack();
@@ -66,6 +80,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     private void Start()
     {
+        health = maxHealth;
         patrolIndex = -1;
         state = initialState;
         transform.position = NextPatrolPoint;
@@ -75,6 +90,35 @@ public class SimpleMonster : MonoBehaviour, Enemy
             StartCoroutine(Patroling());
         }
         StartCoroutine(Attention());
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var cmp = other.collider.GetComponent<DamageSystem>();
+        if (cmp != null)
+        {
+            animationHandler.Hurt();
+            health = Mathf.Max(0, health - cmp.DamageAmount);
+        }
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        animationHandler.Die();
+        enabled = false;
+        StopAllCoroutines();
+        var rigid2d = GetComponent<Rigidbody2D>();
+        rigid2d.velocity = Vector2.zero;
+        rigid2d.isKinematic = true;
+        var colliders = GetComponentsInChildren<Collider2D>();
+        foreach(var c in colliders)
+        {
+            c.enabled = false;
+        }
     }
 
     // Coroutine for patroling

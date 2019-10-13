@@ -4,6 +4,9 @@ public class Custom2dCharacter : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private Rigidbody2D rigid2d;
     
     [SerializeField]
     private UnityStandardAssets._2D.Platformer2DUserControl controls;
@@ -53,6 +56,10 @@ public class Custom2dCharacter : MonoBehaviour
         if (Input.GetButtonDown("WizAttack"))
         {
             animator.SetTrigger("Attack");
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetTrigger("Jump");
         }
         // A little cheat ;)
         if (Input.GetKeyDown(KeyCode.R))
