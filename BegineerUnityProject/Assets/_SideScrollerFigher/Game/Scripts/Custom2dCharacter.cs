@@ -31,7 +31,7 @@ public class Custom2dCharacter : MonoBehaviour
         health = maxHealth;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         var dmg = other.gameObject.GetComponent<DamageSystem>();
         if (dmg != null) // == means equal, != means not equal
