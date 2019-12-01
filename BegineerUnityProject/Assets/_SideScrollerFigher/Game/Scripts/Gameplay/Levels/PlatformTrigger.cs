@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class PlatformTrigger : MonoBehaviour
 {
-    private bool inside;
-
     [SerializeField]
     private Collider2D elementCollider;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        inside = true;
-    }
+    [SerializeField]
+    private ZoneTriggerEvent zone;
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnZoneExit()
     {
-        inside = false;
         elementCollider.enabled = true;
     }
 
     private void Update()
     {
-        if (Input.GetButton("GoLevelDown") && inside)
+        if (Input.GetButton("GoLevelDown") && zone.IsAnyoneInside)
         {
             elementCollider.enabled = false;
         }
