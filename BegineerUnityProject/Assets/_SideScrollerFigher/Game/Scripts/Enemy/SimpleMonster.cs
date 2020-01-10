@@ -32,6 +32,9 @@ public class SimpleMonster : MonoBehaviour, Enemy
     [SerializeField]
     private Character2dAnimationHandler animationHandler;
 
+    [SerializeField]
+    private ParticleSystem blood;
+    
     private Vector2 NextPatrolPoint
     {
         get
@@ -107,6 +110,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
         if (cmp != null)
         {
             animationHandler.Hurt();
+            blood?.Play();
             health = Mathf.Max(0, health - cmp.DamageAmount);
         }
         if (health <= 0)
