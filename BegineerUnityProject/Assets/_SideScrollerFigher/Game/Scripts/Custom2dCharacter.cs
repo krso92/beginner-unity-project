@@ -33,6 +33,10 @@ public class Custom2dCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy"))
+        {
+            return;
+        }
         var dmg = other.gameObject.GetComponent<DamageSystem>();
         if (dmg != null) // == means equal, != means not equal
         {
