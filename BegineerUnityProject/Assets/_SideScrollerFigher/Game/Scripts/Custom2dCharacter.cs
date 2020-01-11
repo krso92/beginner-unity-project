@@ -60,6 +60,7 @@ public class Custom2dCharacter : MonoBehaviour
         if (Input.GetButtonDown("WizAttack"))
         {
             animator.SetTrigger("Attack");
+            Debug.LogError("ž attak");
         }
         if (Input.GetButtonDown("Jump"))
         {

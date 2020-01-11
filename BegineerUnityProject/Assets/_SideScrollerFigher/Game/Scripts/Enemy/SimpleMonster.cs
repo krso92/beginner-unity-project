@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -31,6 +32,9 @@ public class SimpleMonster : MonoBehaviour, Enemy
     [SerializeField]
     private Character2dAnimationHandler animationHandler;
 
+    [SerializeField]
+    private ParticleSystem blood;
+    
     private Vector2 NextPatrolPoint
     {
         get
@@ -83,7 +87,15 @@ public class SimpleMonster : MonoBehaviour, Enemy
         health = maxHealth;
         patrolIndex = -1;
         state = initialState;
-        transform.position = NextPatrolPoint;
+        try
+        {
+            transform.position = NextPatrolPoint;
+        }
+        catch (UnassignedReferenceException e)
+        {
+            Debug.LogError($"Nema patrol pointa za: {transform.name}, stanje se prebacuje na idle...");
+            state = EnemyState.Idle;
+        }
         direction = 1;
         if (state == EnemyState.Patroling)
         {
@@ -98,6 +110,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
         if (cmp != null)
         {
             animationHandler.Hurt();
+            blood?.Play();
             health = Mathf.Max(0, health - cmp.DamageAmount);
         }
         if (health <= 0)
