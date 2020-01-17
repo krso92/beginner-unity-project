@@ -215,6 +215,9 @@ public class SimpleMonster : MonoBehaviour, Enemy
                         StartCoroutine(Attacking(hit.transform));
                     }
                     break;
+                case EnemyState.Idle:
+                    Debug.Log("Enemy is idle");
+                    break;
                 default:
                     throw new System.NotImplementedException();
             }
