@@ -9,10 +9,25 @@ public class Custom2dCharacter : MonoBehaviour
     private Rigidbody2D rigid2d;
     
     [SerializeField]
-    private UnityStandardAssets._2D.Platformer2DUserControl controls;
+    private SF_PlatformerCharacter2D character2D;
+
+    [SerializeField]
+    private SF_Platformer2DUserControl controls;
 
     [SerializeField]
     private int maxHealth;
+
+    [SerializeField]
+    private float walkSpeed = 10;
+
+    [SerializeField]
+    private float runSpeed = 16;
+
+    private float CurrentSpeed
+    {
+        get => character2D.MaxSpeed;
+        set => character2D.MaxSpeed = value;
+    }
 
     private int health;
 
@@ -29,6 +44,11 @@ public class Custom2dCharacter : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+    }
+
+    private void SetSpeed(bool run)
+    {
+        CurrentSpeed = run ? runSpeed : walkSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -65,6 +85,9 @@ public class Custom2dCharacter : MonoBehaviour
         {
             animator.SetTrigger("Jump");
         }
+        // bool run = Input.GetButton("WizRun");
+        // SetSpeed(run);
+        // animator.SetBool("Run", run);
         // A little cheat ;)
         if (Input.GetKeyDown(KeyCode.R))
         {
