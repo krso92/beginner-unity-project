@@ -85,9 +85,9 @@ public class Custom2dCharacter : MonoBehaviour
         {
             animator.SetTrigger("Jump");
         }
-        // bool run = Input.GetButton("WizRun");
-        // SetSpeed(run);
-        // animator.SetBool("Run", run);
+        bool run = Input.GetButton("WizRun");
+        SetSpeed(run);
+        animator.SetBool("Run", run);
         // A little cheat ;)
         if (Input.GetKeyDown(KeyCode.R))
         {
