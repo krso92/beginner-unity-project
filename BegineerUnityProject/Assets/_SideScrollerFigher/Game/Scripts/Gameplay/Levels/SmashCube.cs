@@ -16,7 +16,9 @@ public class SmashCube : MonoBehaviour
         while (enabled)
         {
             yield return new WaitForSeconds(smashWait);
-            // set anim, set anim
+            animator.SetTrigger("smash");
+            yield return new WaitForSeconds(1f);
+            animator.SetTrigger("back");
         }
     }
 }
