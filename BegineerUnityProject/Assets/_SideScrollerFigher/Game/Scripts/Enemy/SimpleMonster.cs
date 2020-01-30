@@ -110,7 +110,14 @@ public class SimpleMonster : MonoBehaviour, Enemy
         if (cmp != null)
         {
             animationHandler.Hurt();
-            blood?.Play();
+            if (blood != null)
+            {
+                blood.Play();
+            }
+            else
+            {
+                Debug.LogError($"Blood not assigned for {gameObject.name}");
+            }
             health = Mathf.Max(0, health - cmp.DamageAmount);
         }
         if (health <= 0)

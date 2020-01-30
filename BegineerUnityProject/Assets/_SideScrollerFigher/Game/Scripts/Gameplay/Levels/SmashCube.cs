@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class SmashCube : MonoBehaviour
 {
-    
+    [InfoBox("Limit namesten za Y u kodu")]
     [SerializeField] private float smashWait;
     [SerializeField] private Animator animator;
 
