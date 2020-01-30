@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class Custom2dCharacter : MonoBehaviour
+public class Custom2dCharacter : MonoBehaviour, Mortal
 {
     [SerializeField]
     private Animator animator;
@@ -23,6 +24,9 @@ public class Custom2dCharacter : MonoBehaviour
     [SerializeField]
     private float runSpeed = 16;
 
+    [SerializeField] private PolygonCollider2D aliveCollider;
+    [SerializeField] private PolygonCollider2D deadCollider;
+    
     private float CurrentSpeed
     {
         get => character2D.MaxSpeed;
@@ -31,6 +35,8 @@ public class Custom2dCharacter : MonoBehaviour
 
     private int health;
 
+    public bool IsAlive => CurrentHealth > 0;
+    
     public int CurrentHealth
     {
         get => health;
@@ -60,19 +66,31 @@ public class Custom2dCharacter : MonoBehaviour
         var dmg = other.gameObject.GetComponent<DamageSystem>();
         if (dmg != null) // == means equal, != means not equal
         {
-            health = Mathf.Max(0, health - dmg.DamageAmount);
-            animator.SetTrigger("Hurt");
-        }
-        if (health == 0)
-        {
-            Die();
+            var healthToBe = Mathf.Max(0, health - dmg.DamageAmount);
+            if (healthToBe == 0)
+            {
+                Die();
+            }
+            else
+            {
+                health = healthToBe;
+                animator.SetTrigger("Hurt");    
+            }
         }
     }
 
-    private void Die()
+    public void Die()
     {
+        if (!IsAlive)
+        {
+            Debug.Log("Can not die while dead");
+            return;
+        }
+        health = 0;
         animator.SetTrigger("Die");
         controls.enabled = false;
+        aliveCollider.enabled = false;
+        deadCollider.enabled = true;
     }
 
     private void Update()
@@ -88,11 +106,16 @@ public class Custom2dCharacter : MonoBehaviour
         bool run = Input.GetButton("WizRun");
         SetSpeed(run);
         animator.SetBool("Run", run);
-        // A little cheat ;)
+#if DEBUG
         if (Input.GetKeyDown(KeyCode.R))
         {
             animator.SetTrigger("Revive");
             controls.enabled = true;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Die();            
+        }
+#endif
     }
 }

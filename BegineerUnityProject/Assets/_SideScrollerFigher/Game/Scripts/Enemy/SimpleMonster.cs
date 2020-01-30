@@ -119,7 +119,7 @@ public class SimpleMonster : MonoBehaviour, Enemy
         }
     }
 
-    void Die()
+    public void Die()
     {
         animationHandler.Die();
         enabled = false;

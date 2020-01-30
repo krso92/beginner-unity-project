@@ -485,6 +485,7 @@ Transform:
   - {fileID: 4351354146691929016}
   - {fileID: 5338466745617146577}
   - {fileID: 4239483884100724210}
+  - {fileID: 6291466575577545688}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -547,6 +548,8 @@ MonoBehaviour:
   maxHealth: 100000
   walkSpeed: 10
   runSpeed: 16
+  aliveCollider: {fileID: 3888704729369738616}
+  deadCollider: {fileID: 1271649232773275267}
 --- !u!114 &-7328215667689777010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1350,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2011825373951457707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6291466575577545688}
+  - component: {fileID: 1271649232773275267}
+  m_Layer: 10
+  m_Name: Collider -- Dead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6291466575577545688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011825373951457707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4215231000444096}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1271649232773275267
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011825373951457707}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.1828537, y: 2.4486089}
+      - {x: -2.4019547, y: 2.7316427}
+      - {x: -3.5205917, y: 1.118979}
+      - {x: -2.7383728, y: 0.08473438}
+      - {x: 1.2581024, y: 0.0847345}
+      - {x: 1.8448105, y: 1.3703465}
 --- !u!1 &2557767075179119672
 GameObject:
   m_ObjectHideFlags: 0

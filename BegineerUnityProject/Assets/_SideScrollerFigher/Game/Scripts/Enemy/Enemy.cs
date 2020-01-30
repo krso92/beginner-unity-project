@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface Enemy
+public interface Enemy : Mortal
 {
     /*
         This is 2d enemy
