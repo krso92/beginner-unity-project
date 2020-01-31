@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1093313663}
+    - target: {fileID: 1708696315, guid: 0a1f3b5563d51e451bca21450b79149c, type: 3}
+      propertyPath: maxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a1f3b5563d51e451bca21450b79149c, type: 3}
 --- !u!1 &1960751141

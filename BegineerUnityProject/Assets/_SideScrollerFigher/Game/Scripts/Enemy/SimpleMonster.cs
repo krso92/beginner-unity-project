@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using NaughtyAttributes;
+using NPCBehaviour;
 
 public class SimpleMonster : MonoBehaviour, Enemy
 {
@@ -8,8 +10,10 @@ public class SimpleMonster : MonoBehaviour, Enemy
     [SerializeField]
     private float patrolWait;
 
+    [SerializeField] private float attackReflex;
+    
     [SerializeField]
-    private float attackWait;
+    private float attackCooldown;
 
     [SerializeField]
     private float attackDistanceStop;
@@ -51,6 +55,36 @@ public class SimpleMonster : MonoBehaviour, Enemy
 
     public EnemyState State => state;
 
+    private SimpleEnemyStateMachine stateMachine;
+
+    private Transform target;
+
+    private Agent _agent;
+
+    private Agent Agent
+    {
+        get
+        {
+            if (_agent == null)
+            {
+                _agent = GetComponent<Agent>();
+            }
+            return _agent;
+        }
+    }
+
+    private StateAttack GetAttackState()
+    {
+        return new StateAttack(GetComponent<Agent>(), attackReflex, attackCooldown, target);
+    }
+
+    private StateMove GetMoveLeft()
+    {
+        return new StateMove(Agent, -1, character2D);
+    }
+    
+    // private StateMove GetMoveRight
+    
     // Health part
 
 
@@ -82,6 +116,11 @@ public class SimpleMonster : MonoBehaviour, Enemy
         character2D.Move(move, false, false);
     }
 
+    private void Awake()
+    {
+        stateMachine = new SimpleEnemyStateMachine(GetComponent<Agent>());
+    }
+
     private void Start()
     {
         health = maxHealth;
@@ -97,11 +136,11 @@ public class SimpleMonster : MonoBehaviour, Enemy
             state = EnemyState.Idle;
         }
         direction = 1;
-        if (state == EnemyState.Patroling)
-        {
-            StartCoroutine(Patroling());
-        }
-        StartCoroutine(Attention());
+        // if (state == EnemyState.Patroling)
+        // {
+        //     StartCoroutine(Patroling());
+        // }
+        // StartCoroutine(Attention());
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -162,16 +201,32 @@ public class SimpleMonster : MonoBehaviour, Enemy
         yield return null;
     }
 
-    private IEnumerator Attacking(Transform target)
+    private IEnumerator Attacking(Transform t)
     {
         Debug.Log("Entering attacking state...");
         while(state == EnemyState.Attacking)
         {
-            var dist = target.position.x - transform.position.x;
+            var dist = t.position.x - transform.position.x;
             var move = Mathf.Clamp(Mathf.Abs(dist) > attackDistanceStop ? dist : 0f, -1, 1);
             Move(move);
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    [Button]
+    private void SetAttackState()
+    {
+        target = FindObjectOfType<Custom2dCharacter>()?.transform;
+        stateMachine.ChangeState(GetAttackState());
+    }
+
+    private bool CanAttack()
+    {
+        if (target == null)
+        {
+            return false;
+        }
+        return Vector2.Distance(transform.position, target.position) < 3.5f;
     }
 
     private bool IsNear(Vector2 spot, float delta = 1f)
@@ -230,4 +285,16 @@ public class SimpleMonster : MonoBehaviour, Enemy
             }
         }
     }
+    
+#if DEBUG
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            stateMachine.ChangeState(GetMoveLeft());
+        }
+    }
+
+#endif
 }
