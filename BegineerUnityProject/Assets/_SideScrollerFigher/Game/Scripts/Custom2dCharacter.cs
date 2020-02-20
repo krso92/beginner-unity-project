@@ -1,5 +1,7 @@
 using System;
+using Unity.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Custom2dCharacter : MonoBehaviour, Mortal
 {
@@ -91,6 +93,13 @@ public class Custom2dCharacter : MonoBehaviour, Mortal
         controls.enabled = false;
         aliveCollider.enabled = false;
         deadCollider.enabled = true;
+        
+        Invoke("RestartLevel", 2f);
+    }
+
+    void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Update()

@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster 01 - The Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1393156479022002, guid: 0a1f3b5563d51e451bca21450b79149c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462786940497318, guid: 0a1f3b5563d51e451bca21450b79149c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.821293
@@ -852,8 +856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c109abf843149be9fd76b73a52fd60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromColor: {r: 0.5454343, g: 0.55414677, b: 0.9716981, a: 0}
-  toColor: {r: 0.34183103, g: 0.6792453, b: 0.26272696, a: 0}
+  fromColor: {r: 1, g: 0.021337382, b: 0, a: 0}
+  toColor: {r: 0.18867922, g: 1, b: 0, a: 0}
   currentRenderer: {fileID: 1960751143}
 --- !u!1 &2103836149 stripped
 GameObject:
